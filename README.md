@@ -98,7 +98,7 @@
             <p>Previous Projects: Spotify, Uber, Customer Churn Prediction</p>
         </div>
         <div class="member">
-            <img src="path/to/mina.jpg" alt="Mina Thabet">
+            <img src="my pic.jpeg" alt="Mina Thabet">
             <h2>Mina Thabet</h2>
             <p>Business Analyst</p>
             <p>Experience: Power BI, Python, SQL</p>
