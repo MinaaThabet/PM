@@ -91,7 +91,7 @@
 
     <section class="team">
         <div class="member">
-            <img src="path/to/fareida.jpg" alt="Fareida Abdallah">
+            <img src="ferry.jpeg" alt="Fareida Abdallah">
             <h2>Fareida Abdallah</h2>
             <p>Business Analyst</p>
             <p>Experience: SQL, Database Design, Churn Prediction</p>
@@ -105,7 +105,7 @@
             <p>Previous Projects: Hotel Management, Spotify Analysis, Retail Analysis</p>
         </div>
         <div class="member">
-            <img src="path/to/zahraa.jpg" alt="Zahraa Abdelhalim">
+            <img src="zahraa.jpeg" alt="Zahraa Abdelhalim">
             <h2>Zahraa Abdelhalim</h2>
             <p>Business Analyst</p>
             <p>Experience: Machine Learning, Data Visualization</p>
