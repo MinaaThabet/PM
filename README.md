@@ -119,7 +119,7 @@
             <h3>Spotify Analysis</h3>
         </div>
         <div class="project">
-            <img src="ccp.jpeg" alt="Project 2" style="width: 100%; border-radius: 10px;">
+            <img src="CCP (2).jpeg" alt="Project 2" style="width: 100%; border-radius: 10px;">
             <h3>Customer Churn Prediction</h3>
         </div>
         <div class="project">
