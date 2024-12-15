@@ -115,15 +115,15 @@
 
     <section class="projects">
         <div class="project">
-            <img src="path/to/project1.jpg" alt="Project 1" style="width: 100%; border-radius: 10px;">
+            <img src="Spotify.jpeg" alt="Project 1" style="width: 100%; border-radius: 10px;">
             <h3>Spotify Analysis</h3>
         </div>
         <div class="project">
-            <img src="path/to/project2.jpg" alt="Project 2" style="width: 100%; border-radius: 10px;">
+            <img src="Spotify.jpeg" alt="Project 2" style="width: 100%; border-radius: 10px;">
             <h3>Customer Churn Prediction</h3>
         </div>
         <div class="project">
-            <img src="path/to/project3.jpg" alt="Project 3" style="width: 100%; border-radius: 10px;">
+            <img src="iot security.jpeg" alt="Project 3" style="width: 100%; border-radius: 10px;">
             <h3>IoT Security</h3>
         </div>
     </section>
