@@ -27,15 +27,15 @@
         .team-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: nowrap; /* Prevent wrapping */
+            gap: 20px;
+            flex-wrap: nowrap;
         }
         .team-member {
             background-color: #3D4D55;
             border: 3px solid #A75E4C;
             border-radius: 16px;
             overflow: hidden;
-            width: 320px;
+            width: 260px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -150,6 +150,15 @@
         .chat-popup button:hover {
             background-color: #A75E4C;
         }
+        @media (max-width: 768px) {
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-member {
+                width: 90%;
+            }
+        }
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -213,11 +222,12 @@
             const question = chatInput.value.trim();
 
             if (question) {
+                // Simulate an AI response
                 fetch('https://api.openai.com/v1/completions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer YOUR_API_KEY_HERE'
+                        'Authorization': 'Bearer YOUR_API_KEY_HERE' // Replace with your API key
                     },
                     body: JSON.stringify({
                         model: 'text-davinci-003',
@@ -234,7 +244,7 @@
                     console.error(error);
                 });
 
-                chatInput.value = '';
+                chatInput.value = ''; // Clear the input after submission
             } else {
                 alert("Please enter a question before submitting.");
             }
