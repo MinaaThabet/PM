@@ -186,7 +186,7 @@
         <div class="team-container">
             <div class="team-member">
                 <img src="ferry.jpeg" alt="Farieda Abdallah">
-                <div class="name"><a href="farieda_portfolio.html">Farieda Abdallah</a></div>
+                <div class="name"><a href="farieda.html">Farieda Abdallah</a></div>
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
             </div>
