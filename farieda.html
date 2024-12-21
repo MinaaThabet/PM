@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farida Abdallah Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+        }
+        .header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .about-me, .services {
+            padding: 40px;
+            text-align: center;
+        }
+        .about-me {
+            background-color: #2e2e2e;
+        }
+        .about-me p {
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        .services {
+            background-color: #1c1c1c;
+        }
+        .services .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .services .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+        .services .card:hover {
+            transform: translateY(-10px);
+        }
+        .card h3 {
+            margin: 0 0 10px 0;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Hello, I'm Farida Abdallah</h1>
+            <p>Student | Business & Analytics Enthusiast</p>
+        </div>
+        <img src="your-photo.jpg" alt="Farida Abdallah">
+    </div>
+
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>I am a student at the Egyptian Russian University, Faculty of Business Technology, majoring in Business and Analytics. I will graduate in 2025. I have worked on various projects such as Spotify customer return prediction and SwitchUp for baby hair straightener. My academic journey is complemented by courses in R programming, mathematics, Python, C++, SQL, and Power BI.</p>
+        <a class="button" href="#">Download CV</a>
+    </div>
+
+    <div class="services">
+        <h2>Skills & Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Business Analysis</h3>
+                <p>Skilled in analyzing business needs and translating them into actionable insights.</p>
+            </div>
+            <div class="card">
+                <h3>Data Analytics</h3>
+                <p>Proficient in data interpretation, statistical analysis, and visualization using tools like Power BI.</p>
+            </div>
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Experience in Python, R, C++, and SQL for data manipulation and problem-solving.</p>
+            </div>
+            <div class="card">
+                <h3>Soft Skills</h3>
+                <p>Excellent communication, presentation, and teamwork skills developed through academic and project experiences.</p>
+            </div>
+            <div class="card">
+                <h3>Statistical Concepts</h3>
+                <p>Deep understanding of statistical methods and their applications in business and analytics.</p>
+            </div>
+            <div class="card">
+                <h3>Tools</h3>
+                <p>Proficient in Microsoft Office Suite (Excel, Word, PowerPoint) for professional documentation and presentations.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
