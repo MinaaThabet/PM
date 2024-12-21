@@ -192,7 +192,7 @@
             </div>
             <div class="team-member">
                 <img src="my pic.jpeg" alt="Mina Thabet">
-                <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
+                <div class="name"><a href="minaa.txt">Mina Thabet</a></div>
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
             </div>
