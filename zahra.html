@@ -4,156 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhara Abdel Halim Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d0d2b;
-            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
         }
-        .header {
+        .sidebar {
+            width: 250px;
+            background-color: #161616;
+            height: 100vh;
+            position: fixed;
             padding: 20px;
-            text-align: center;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .header h1 {
-            font-size: 2.5em;
-            margin: 0;
+        .sidebar img {
+            width: 120px;
+            border-radius: 50%;
         }
-        .header p {
+        .sidebar h1 {
+            font-size: 22px;
+            margin: 20px 0 10px;
+        }
+        .sidebar nav a {
+            text-decoration: none;
+            color: #aaa;
             margin: 10px 0;
-            font-size: 1.2em;
+            display: block;
+            text-align: center;
+            transition: 0.3s;
         }
-        .header a {
+        .sidebar nav a:hover {
+            color: white;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 40px;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        .hero p {
+            color: #aaa;
+        }
+        .hero .btn {
+            text-decoration: none;
+            color: white;
+            background-color: #00b894;
+            padding: 10px 20px;
+            border-radius: 5px;
             margin-top: 20px;
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #2575fc;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
         }
-        .header a:hover {
-            background-color: #6a11cb;
+        .section {
+            margin-bottom: 50px;
         }
-        .about {
-            padding: 40px;
-            background-color: #111133;
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
         }
-        .about h2 {
-            text-align: center;
-        }
-        .about .content {
+        .skills, .experience {
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-            margin-top: 20px;
         }
-        .about .info {
-            background: #1a1a3d;
+        .card {
+            background-color: #222;
             padding: 20px;
+            margin: 10px;
             border-radius: 8px;
-            flex: 1 1 300px;
-            min-width: 300px;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
         }
-        .info h3 {
+        .card h3 {
+            font-size: 20px;
             margin-bottom: 10px;
         }
-        .info p {
-            margin: 5px 0;
+        .progress-bar {
+            background-color: #444;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            height: 10px;
+            margin: 10px 0;
         }
-        .skills {
-            padding: 40px;
-            background-color: #0d0d2b;
-        }
-        .skills h2 {
-            text-align: center;
-        }
-        .skills .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .skills .card {
-            background: #1a1a3d;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .skills .card:hover {
-            background: #6a11cb;
-            color: #fff;
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: #00b894;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Hello, I'm Zhara Abdel Halim</h1>
-        <img src="zahr.jpeg" alt="Zhara Abdel Halim">
-        <p>Ambitious and result-oriented Business Analyst</p>
-        <a href="Zahraa Abdelhalim Resume">Download CV</a>
+    <div class="sidebar">
+        <img src="zahr.jpg" alt="Profile Picture">
+        <h1>Zhara Abdel Halim</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
     </div>
 
-    <div class="about">
-        <h2>About Me</h2>
-        <div class="content">
-            <div class="info">
-                <h3>Objective</h3>
-                <p>Ambitious and result-oriented business analyst with expertise in data analysis, blending technical proficiency with business acumen to deliver impactful solutions. Passionate about innovation, business growth, and creating value through data-driven insights.</p>
-            </div>
-            <div class="info">
-                <h3>Education</h3>
-                <p>Bachelor of Business Technology and Business Analytics</p>
-                <p>Egyptian Russian University, Cairo</p>
-                <p>Graduation Year: 2025</p>
-            </div>
-            <div class="info">
-                <h3>Experience</h3>
-                <ul>
-                    <li>Sales Representative at Equity International Exchange (Summer 2023)</li>
-                    <li>Presented at the 7th Annual Design and Statistical Conference</li>
-                    <li>Attended Tech Summit 2023 and Data Science Conference MENA 2024</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <div class="content">
+        <section id="home" class="hero">
+            <h1>Hello, I am Zhara Abdel Halim</h1>
+            <p>Ambitious and result-oriented Business Analyst blending technical proficiency with business acumen to deliver impactful solutions.</p>
+            <a href="Zahraa Abdelhalim Resume" class="btn">Download CV</a>
+        </section>
 
-    <div class="skills">
-        <h2>Skills & Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Business Analysis</h3>
-                <p>Requirement gathering, regression analysis, and strategic insights.</p>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>I am a Business Analyst proficient in leveraging machine learning, AI tools, and statistical analysis to uncover hidden opportunities and optimize operations. Passionate about innovation and business growth.</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Education & Skills</h2>
+            <div class="skills">
+                <div class="card">
+                    <h3>Bachelor of Business Technology</h3>
+                    <p>Egyptian Russian University, Cairo - Graduating in 2025</p>
+                </div>
+                <div class="card">
+                    <h3>Technical Skills</h3>
+                    <p>Business Analysis, Regression Analysis, Statistical Concepts, Coding (C++, JavaScript)</p>
+                    <div class="progress-bar"><span style="width: 90%;"></span></div>
+                    <div class="progress-bar"><span style="width: 80%;"></span></div>
+                </div>
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <p>Communication, Presentation, Decision-Making, Fast Learner</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Data Analytics</h3>
-                <p>Proficient in leveraging AI tools, statistical analysis, and data visualization.</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="experience">
+                <div class="card">
+                    <h3>Sales Representative</h3>
+                    <p>Equity International Exchange - Summer 2023</p>
+                </div>
+                <div class="card">
+                    <h3>Conferences & Participation</h3>
+                    <p>Tech Summit 2023, Data Science Conference MENA 2024, and more.</p>
+                </div>
+                <div class="card">
+                    <h3>Projects</h3>
+                    <p>Cardiovascular Disease Risk Analysis, Hotel Management System, and more.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Programming</h3>
-                <p>Skilled in C++, JavaScript, and TensorFlow for problem-solving and development.</p>
-            </div>
-            <div class="card">
-                <h3>Soft Skills</h3>
-                <p>Excellent communication, presentation, and decision-making abilities.</p>
-            </div>
-            <div class="card">
-                <h3>Tools</h3>
-                <p>Proficient in Excel, Word, PowerPoint, and data analytics tools like Power BI.</p>
-            </div>
-            <div class="card">
-                <h3>Key Projects</h3>
-                <ul>
-                    <li>Analyzing Cardiovascular Disease Risk</li>
-                    <li>Hotel Management System</li>
-                    <li>Amazon Prime Video Data Retail Analysis</li>
-                    <li>Economic Analysis of Fabric Production Units</li>
-                </ul>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
