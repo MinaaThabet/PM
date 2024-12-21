@@ -190,11 +190,12 @@
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
             </div>
-            <div class="team-member">
-                <img src="my pic.jpeg" alt="Mina Thabet">
-                <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
-                <div class="title">Business Analytics Major</div>
-                <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
+           <div class="team-member">
+    <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
+    <div class="title">Business Analytics Major</div>
+    <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
+    <img src="my pic.jpeg" alt="Mina Thabet">
+</div>
             </div>
             <div class="team-member">
                 <img src="zahr.jpeg" alt="Zahraa Abdelhalim">
