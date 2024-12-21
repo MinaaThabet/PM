@@ -28,14 +28,16 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Ensure items don't wrap */
         }
         .team-member {
             background-color: #3D4D55;
             border: 3px solid #A75E4C;
             border-radius: 16px;
             overflow: hidden;
-            width: 320px;
+            flex: 1 1 0; /* All cards share equal width */
+            max-width: 320px;
+            min-width: 280px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -150,13 +152,18 @@
         .chat-popup button:hover {
             background-color: #A75E4C;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .team-container {
-                flex-direction: column;
-                align-items: center;
+                flex-wrap: wrap; /* Allow wrapping for smaller screens */
             }
             .team-member {
-                width: 90%;
+                flex: 1 1 calc(50% - 30px); /* Show two cards per row for mid-sized screens */
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .team-member {
+                flex: 1 1 100%; /* Stack cards vertically for small screens */
             }
         }
         @keyframes fadeIn {
@@ -184,10 +191,10 @@
                 <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
             </div>
             <div class="team-member">
+                <img src="my pic.jpeg" alt="Mina Thabet">
                 <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
-                <img src="my pic.jpeg" alt="Mina Thabet">
             </div>
             <div class="team-member">
                 <img src="zahraa.jpeg" alt="Zahraa Abdelhalim">
@@ -210,41 +217,18 @@
         <textarea id="chatInput" placeholder="Type your question..."></textarea>
         <button onclick="handleChatSubmit()">Send</button>
     </div>
-
     <script>
         function toggleChatPopup() {
             const chatPopup = document.getElementById('chatPopup');
             chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
         }
 
-
-function handleChatSubmit() {
+        function handleChatSubmit() {
             const chatInput = document.getElementById('chatInput');
             const question = chatInput.value.trim();
 
             if (question) {
-                // Simulate an AI response
-                fetch('https://api.openai.com/v1/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer YOUR_API_KEY_HERE' // Replace with your API key
-                    },
-                    body: JSON.stringify({
-                        model: 'text-davinci-003',
-                        prompt: question,
-                        max_tokens: 100
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(AI Response: ${data.choices[0].text.trim()});
-                })
-                .catch(error => {
-                    alert('An error occurred while fetching the AI response.');
-                    console.error(error);
-                });
-
+                alert(`Question submitted: ${question}`);
                 chatInput.value = ''; // Clear the input after submission
             } else {
                 alert("Please enter a question before submitting.");
