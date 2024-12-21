@@ -1,149 +1,255 @@
-# PM
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Profile</title>
+    <title>Meet Our Awesome Team</title>
     <style>
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f9f4;
-            color: #333;
+            background: linear-gradient(to bottom, #3D4D55, #B58863);
+            color: #D3C3B9;
         }
-        header, footer {
-            background-color: #228B22;
-            color: white;
+        header {
+            background-color: #222;
+            color: #D3C3B9;
             text-align: center;
-            padding: 1em 0;
+            padding: 20px 0;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .team {
+        .team-section {
+            padding: 50px 20px;
+        }
+        .team-container {
             display: flex;
             justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
         }
-        .member {
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 10px;
+        .team-member {
+            background-color: #3D4D55;
+            border: 3px solid #A75E4C;
+            border-radius: 16px;
+            overflow: hidden;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-bottom: 3px solid #A75E4C;
+        }
+        .team-member .name {
+            background-color: #222;
+            color: #D3C3B9;
             padding: 15px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 22px;
+            font-weight: bold;
         }
-        .member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-        .member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .project {
-            width: 250px;
-            margin: 10px;
-            text-align: center;
-        }
-        .contact {
-            text-align: center;
-            padding: 20px;
-        }
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .contact-icons a {
-            color: #228B22;
-            font-size: 1.5em;
+        .team-member .name a {
+            color: #D3C3B9;
             text-decoration: none;
         }
-        .qna-section {
-            padding: 20px;
-            text-align: center;
+        .team-member .name a:hover {
+            text-decoration: underline;
         }
-        .qna-box {
-            width: 80%;
-            height: 150px;
-            margin: auto;
+        .team-member .title {
+            font-size: 16px;
+            color: #B58863;
+            margin: 10px 0;
+        }
+        .team-member .description {
+            font-size: 14px;
+            color: #D3C3B9;
+            padding: 0 20px 20px;
+        }
+        footer {
+            background-color: #222;
+            color: #D3C3B9;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            text-decoration: none;
+            color: #B58863;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-icons {
+            margin-top: 10px;
+        }
+        .footer-icons span {
+            font-size: 16px;
+            margin-right: 15px;
+        }
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #B58863;
+            color: #222;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .chat-icon:hover {
+            background-color: #A75E4C;
+        }
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: #3D4D55;
+            border: 2px solid #A75E4C;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 300px;
+            display: none;
+            z-index: 1000;
+        }
+        .chat-popup textarea {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .chat-popup button {
+            background-color: #B58863;
+            color: #222;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+        }
+        .chat-popup button:hover {
+            background-color: #A75E4C;
+        }
+        @media (max-width: 768px) {
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-member {
+                width: 90%;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meet Our Team</h1>
+        Meet Our Awesome Team
     </header>
-
-    <section class="team">
-        <div class="member">
-            <img src="ferry.jpeg" alt="Fareida Abdallah">
-            <h2>Fareida Abdallah</h2>
-            <p>Business Analyst</p>
-            <p>Experience: SQL, Database Design, Churn Prediction</p>
-            <p>Previous Projects: Spotify, Uber, Customer Churn Prediction</p>
-        </div>
-        <div class="member">
-            <img src="my pic.jpeg" alt="Mina Thabet">
-            <h2>Mina Thabet</h2>
-            <p>Business Analyst</p>
-            <p>Experience: Power BI, Python, SQL</p>
-            <p>Previous Projects: Hotel Management, Spotify Analysis, Retail Analysis</p>
-        </div>
-        <div class="member">
-            <img src="zahraa.jpeg" alt="Zahraa Abdelhalim">
-            <h2>Zahraa Abdelhalim</h2>
-            <p>Business Analyst</p>
-            <p>Experience: Machine Learning, Data Visualization</p>
-            <p>Previous Projects: Cardiovascular Risk, IoT Security, Hotel Management</p>
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-member">
+                <img src="ferry.jpeg" alt="Farieda Abdallah">
+                <div class="name"><a href="farieda_portfolio.html">Farieda Abdallah</a></div>
+                <div class="title">Business Analytics Major</div>
+                <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
+            </div>
+            <div class="team-member">
+                <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
+                <div class="title">Business Analytics Major</div>
+                <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
+                <img src="my pic.jpeg" alt="Mina Thabet">
+            </div>
+            <div class="team-member">
+                <img src="zhraa.jpeg" alt="Zahraa Abdelhalim">
+                <div class="name"><a href="zahraa_portfolio.html">Zahraa Abdelhalim</a></div>
+                <div class="title">Business Analytics Major</div>
+                <div class="description">Egyptian Russian University, Class of 2025. Dedicated to leveraging data for innovation and transformative solutions.</div>
+            </div>
         </div>
     </section>
-
-    <section class="projects">
-        <div class="project">
-            <img src="Spotify.jpeg" alt="Project 1" style="width: 100%; border-radius: 10px;">
-            <h3>Spotify Analysis</h3>
-        </div>
-        <div class="project">
-            <img src="CCP (2).jpeg" alt="Project 2" style="width: 100%; border-radius: 10px;">
-            <h3>Customer Churn Prediction</h3>
-        </div>
-        <div class="project">
-            <img src="iot security.jpeg" alt="Project 3" style="width: 100%; border-radius: 10px;">
-            <h3>IoT Security</h3>
-        </div>
-    </section>
-
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-icons">
-            <a href="mailto:fareida238@gmail.com">📧</a>
-            <a href="mailto:minathabetnaeem@gmail.com">📧</a>
-            <a href="mailto:zahraahaliim@gmail.com">📧</a>
-        </div>
-    </section>
-
-    <section class="qna-section">
-        <h2>Ask Us Any Question</h2>
-        <textarea class="qna-box" placeholder="Type your question here..."></textarea>
-    </section>
-
     <footer>
-        <p>&copy; 2024 Our Team. All rights reserved.</p>
+        <div>Contact Us:</div>
+        <div class="footer-icons">
+            <span>📧 <a href="214096@eru.edu.eg.com">Farieda</a></span>
+            <span>📧 <a href="214020@eru.edu.eg.com">Mina</a></span>
+            <span>📧 <a href="214052@eru.edu.eg.com">Zahraa</a></span>
+        </div>
     </footer>
+    <div class="chat-icon" onclick="toggleChatPopup()">💬</div>
+    <div class="chat-popup" id="chatPopup">
+        <textarea id="chatInput" placeholder="Type your question..."></textarea>
+        <button onclick="handleChatSubmit()">Send</button>
+    </div>
+
+    <script>
+        function toggleChatPopup() {
+            const chatPopup = document.getElementById('chatPopup');
+            chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
+        }
+
+
+function handleChatSubmit() {
+            const chatInput = document.getElementById('chatInput');
+            const question = chatInput.value.trim();
+
+            if (question) {
+                // Simulate an AI response
+                fetch('https://api.openai.com/v1/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_API_KEY_HERE' // Replace with your API key
+                    },
+                    body: JSON.stringify({
+                        model: 'text-davinci-003',
+                        prompt: question,
+                        max_tokens: 100
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(AI Response: ${data.choices[0].text.trim()});
+                })
+                .catch(error => {
+                    alert('An error occurred while fetching the AI response.');
+                    console.error(error);
+                });
+
+                chatInput.value = ''; // Clear the input after submission
+            } else {
+                alert("Please enter a question before submitting.");
+            }
+        }
+    </script>
 </body>
 </html>
