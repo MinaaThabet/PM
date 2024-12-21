@@ -197,7 +197,7 @@
                 <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
             </div>
             <div class="team-member">
-                <img src="zahraa.jpeg" alt="Zahraa Abdelhalim">
+                <img src="zahr.jpeg" alt="Zahraa Abdelhalim">
                 <div class="name"><a href="zahraa_portfolio.html">Zahraa Abdelhalim</a></div>
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Dedicated to leveraging data for innovation and transformative solutions.</div>
