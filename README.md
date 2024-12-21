@@ -27,15 +27,15 @@
         .team-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: nowrap;
+            gap: 30px;
+            flex-wrap: wrap;
         }
         .team-member {
             background-color: #3D4D55;
             border: 3px solid #A75E4C;
             border-radius: 16px;
             overflow: hidden;
-            width: 260px;
+            width: 320px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -184,10 +184,10 @@
                 <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
             </div>
             <div class="team-member">
-                <img src="my pic.jpeg" alt="Mina Thabet">
                 <div class="name"><a href="mina_portfolio.html">Mina Thabet</a></div>
                 <div class="title">Business Analytics Major</div>
                 <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
+                <img src="my pic.jpeg" alt="Mina Thabet">
             </div>
             <div class="team-member">
                 <img src="zahraa.jpeg" alt="Zahraa Abdelhalim">
@@ -217,7 +217,8 @@
             chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
         }
 
-        function handleChatSubmit() {
+
+function handleChatSubmit() {
             const chatInput = document.getElementById('chatInput');
             const question = chatInput.value.trim();
 
@@ -237,7 +238,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    alert(`AI Response: ${data.choices[0].text.trim()}`);
+                    alert(AI Response: ${data.choices[0].text.trim()});
                 })
                 .catch(error => {
                     alert('An error occurred while fetching the AI response.');
