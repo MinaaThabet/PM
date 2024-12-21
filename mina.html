@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Thabet Naeem Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        header h1 {
+            margin: 20px 0 10px;
+            font-size: 36px;
+        }
+        header p {
+            margin: 0;
+            font-size: 18px;
+            color: #aaa;
+        }
+        .button {
+            margin-top: 20px;
+        }
+        .button a {
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .skills, .reference, .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .skills h2, .reference h2, .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        .skills .circle, .languages .circle {
+            display: inline-block;
+            margin: 15px;
+            text-align: center;
+            width: 120px;
+            height: 120px;
+            border: 5px solid #ffcc00;
+            border-radius: 50%;
+            line-height: 120px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .reference .quote {
+            margin: 0 auto;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .contact .info {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+            color: #aaa;
+        }
+        .contact .info p {
+            margin: 10px 0;
+        }
+        .map, .contact form {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .contact form input, .contact form textarea, .contact form button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .contact form input, .contact form textarea {
+            border: 1px solid #444;
+            background-color: #222;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .contact form button {
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact form button:hover {
+            background-color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="your-photo.jpg" alt="Mina Thabet Naeem">
+        <h1>Mina Thabet Naeem</h1>
+        <p>Business Analyst | Egyptian Russian University | Class of 2025</p>
+        <div class="button">
+            <a href="#">Download CV</a>
+        </div>
+    </header>
+
+    <section class="skills">
+        <h2>My Skills</h2>
+        <div class="circle">Office 365</div>
+        <div class="circle">SQL</div>
+        <div class="circle">Python</div>
+        <div class="circle">C++</div>
+    </section>
+
+    <section class="reference">
+        <h2>Projects</h2>
+        <div class="quote">
+            <p>Hotel Management System</p>
+            <p>Spotify Analysis</p>
+            <p>Sales and Marketing</p>
+            <p>Retail Analysis</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <div class="info">
+            <p>📧 Email: minathabet35@gmail.com</p>
+        </div>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section>
+</body>
+</html>
