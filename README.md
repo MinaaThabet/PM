@@ -1,97 +1,4 @@
-[7:18 pm, 21/12/2024] farieda🥰: <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Our Awesome Team</title>
-    <style>
-        /* Your existing styles */
-        /* Same styles as the provided HTML */
-    </style>
-</head>
-<body>
-    <header>
-        Meet Our Awesome Team
-    </header>
-    <section class="team-section">
-        <div class="team-container">
-            <div class="team-member">
-                <img src="ferry.jpeg" alt="Farieda Abdallah">
-                <div class="name"><a href="farieda.html">Farieda Abdallah</a></div>
-                <div class="title">Business Analytics Major</div>
-                <div class="description">Egyptian Russian University, Class of 2025. Passionate about turning data into actionable insights for global impact.</div>
-            </div>
-            <div class="team-member">
-                <img src="my pic.jpeg" alt="Mina Thabet">
-                <div class="name"><a href="min.html">Mina Thabet</a></div>
-                <div class="title">Business Analytics Major</div>
-                <div class="description">Egyptian Russian University, Class of 2025. Skilled in predictive modeling and data-driven decision-making.</div>
-            </div>
-            <div class="team-member">
-                <img src="zahr.jpeg" alt="Zahraa Abdelhalim">
-                <div class="name"><a href="zahra.html">Zahraa Abdelhalim</a></div>
-                <div class="title">Business Analytics Major</div>
-                <div class="description">Egyptian Russian University, Class of 2025. Dedicated to leveraging data for innovation and transformative solutions.</div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div>Contact Us:</div>
-        <div class="footer-icons">
-            <span>📧 <a href="214096@eru.edu.eg.com">Farieda</a></span>
-            <span>📧 <a href="214020@eru.edu.eg.com">Mina</a></span>
-            <span>📧 <a href="214052@eru.edu.eg.com">Zahraa</a></span>
-        </div>
-    </footer>
-    <div class="chat-icon" onclick="toggleChatPopup()">💬</div>
-    <div class="chat-popup" id="chatPopup">
-        <textarea id="chatInput" placeholder="Ask me a question..."></textarea>
-        <button onclick="handleChatSubmit()">Send</button>
-        <div id="aiResponse" style="margin-top: 10px; color: #D3C3B9;"></div>
-    </div>
-    <script>
-        function toggleChatPopup() {
-            const chatPopup = document.getElementById('chatPopup');
-            chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
-        }
-
-        async function handleChatSubmit() {
-            const chatInput = document.getElementById('chatInput');
-            const question = chatInput.value.trim();
-            const aiResponseDiv = document.getElementById('aiResponse');
-
-            if (question) {
-                aiResponseDiv.textContent = "Thinking..."; // Indicate processing
-                chatInput.value = ''; // Clear input field
-
-                try {
-                    const response = await fetch('https://api.openai.com/v1/completions', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer YOUR_API_KEY' // Replace with your OpenAI API Key
-                        },
-                        body: JSON.stringify({
-                            model: 'text-davinci-003',
-                            prompt: question,
-                            max_tokens: 100,
-                            temperature: 0.7
-                        })
-                    });
-                    const data = await response.json();
-                    aiResponseDiv.textContent = data.choices[0].text.trim();
-                } catch (error) {
-                    aiResponseDiv.textContent = "Sorry, something went wrong. Please try again.";
-                    console.error(error);
-                }
-            } else {
-                alert("Please enter a question before submitting.");
-            }
-        }
-    </script>
-</body>
-</html>
-[7:20 pm, 21/12/2024] farieda🥰: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -121,19 +28,20 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Ensure items don't wrap */
         }
         .team-member {
             background-color: #3D4D55;
             border: 3px solid #A75E4C;
             border-radius: 16px;
             overflow: hidden;
-            flex: 1 1 calc(33.33% - 30px);
+            flex: 1 1 0; /* All cards share equal width */
             max-width: 320px;
             min-width: 280px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease;
         }
         .team-member:hover {
             transform: scale(1.05);
@@ -244,10 +152,29 @@
         .chat-popup button:hover {
             background-color: #A75E4C;
         }
-        #aiResponse {
-            margin-top: 10px;
-            color: #D3C3B9;
-            font-size: 14px;
+        @media (max-width: 1024px) {
+            .team-container {
+                flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            }
+            .team-member {
+                flex: 1 1 calc(50% - 30px); /* Show two cards per row for mid-sized screens */
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .team-member {
+                flex: 1 1 100%; /* Stack cards vertically for small screens */
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -287,9 +214,8 @@
     </footer>
     <div class="chat-icon" onclick="toggleChatPopup()">💬</div>
     <div class="chat-popup" id="chatPopup">
-        <textarea id="chatInput" placeholder="Ask me a question..."></textarea>
+        <textarea id="chatInput" placeholder="Type your question..."></textarea>
         <button onclick="handleChatSubmit()">Send</button>
-        <div id="aiResponse"></div>
     </div>
     <script>
         function toggleChatPopup() {
@@ -297,34 +223,15 @@
             chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
         }
 
-        async function handleChatSubmit() {
+        function handleChatSubmit() {
             const chatInput = document.getElementById('chatInput');
-            const aiResponseDiv = document.getElementById('aiResponse');
             const question = chatInput.value.trim();
 
             if (question) {
-                aiResponseDiv.textContent = "Thinking...";
-                try {
-                    const response = await fetch("https://api.openai.com/v1/completions", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": "Bearer YOUR_API_KEY" // Replace with your API key
-                        },
-                        body: JSON.stringify({
-                            model: "text-davinci-003",
-                            prompt: question,
-                            max_tokens: 100,
-                            temperature: 0.7
-                        })
-                    });
-                    const data = await response.json();
-                    aiResponseDiv.textContent = data.choices[0].text.trim();
-                } catch (error) {
-                    aiResponseDiv.textContent = "Error: Unable to get a response. Please try again.";
-                }
+                alert(Question submitted: ${question});
+                chatInput.value = ''; // Clear the input after submission
             } else {
-                alert("Please enter a question!");
+                alert("Please enter a question before submitting.");
             }
         }
     </script>
